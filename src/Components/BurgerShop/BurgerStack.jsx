@@ -1,9 +1,10 @@
+import Ingredient from "./Ingredient"
 
 const BurgerStack = (props) => {
   return (
     <ul className="burger-stack">
       {props.stack.map(item =>
-        <li key={item._id}>{item.name}</li>
+        <Ingredient key={item._id} ingredient={item} removeFromBurger={props.removeFromBurger} />
       )}
     </ul>
   )

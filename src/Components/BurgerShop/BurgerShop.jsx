@@ -13,16 +13,26 @@ const BurgerShop = () => {
     setStack([...stack, ingredient])
     console.log(stack)
   }
+
+  const removeFromBurger = (ingredient, idx) => {
+    
+    // setStack([stack.filter(item => item.id !== idx)])
+    console.log(stack)
+  }
+
+  const clearOrder = () => {
+    setStack([])
+  }
   
   return (
     <div className="burger-shop">
       <nav>
         <h1>Burger Shop</h1>
-        <button>Clear Order</button>
+        <button onClick={() => clearOrder()}>Clear Order</button>
       </nav>
       <section>
         <IngredientList ingredients={ingredients} addToBurger={addToBurger} />
-        <BurgerStack stack={stack} />
+        <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
       </section>
     </div>
   )

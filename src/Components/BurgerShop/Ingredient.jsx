@@ -4,7 +4,7 @@ const Ingredient = (props) => {
 		<li>
 			<p>{props.ingredient.name}</p>
 			<button onClick={() => props.addToBurger(props.ingredient)}>+</button>
-			<button>X</button>
+			<button onClick={() => props.removeFromBurger(props.ingredient.id)}>X</button>
 		</li>
 	)
 }
