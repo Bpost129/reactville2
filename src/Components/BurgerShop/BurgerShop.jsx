@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../../styles/burger.css'
 
 import BurgerStack from './BurgerStack'
@@ -6,6 +7,8 @@ import IngredientList from './IngredientList'
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = () => {
+  const [stack, setStack] = useState([])
+
   console.log(ingredients)
   
   return (
@@ -15,8 +18,8 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        <IngredientList />
-        <BurgerStack />
+        <IngredientList ingredients={ingredients}/>
+        <BurgerStack  />
       </section>
     </div>
   )

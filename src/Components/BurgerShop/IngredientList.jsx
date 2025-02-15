@@ -2,7 +2,9 @@
 const IngredientList = (props) => {
 	return (
 		<ul>
-			Use the map function and the Ingredient component here
+			{props.ingredients.map(item => 
+				<li>{item.name}</li>
+			)}
 		</ul>
 	)
 }
