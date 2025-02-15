@@ -2,7 +2,9 @@
 const BurgerStack = (props) => {
   return (
     <ul className="burger-stack">
-      Use the map function and the Ingredient component here
+      {props.stack.map(item =>
+        <li>{item}</li>
+      )}
     </ul>
   )
 }

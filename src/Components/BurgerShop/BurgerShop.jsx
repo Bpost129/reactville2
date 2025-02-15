@@ -7,7 +7,7 @@ import IngredientList from './IngredientList'
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = () => {
-  const [stack, setStack] = useState([])
+  const [stack, setStack] = useState(['lettuce', 'tomato'])
 
   console.log(ingredients)
   
@@ -19,7 +19,7 @@ const BurgerShop = () => {
       </nav>
       <section>
         <IngredientList ingredients={ingredients}/>
-        <BurgerStack  />
+        <BurgerStack stack={stack} />
       </section>
     </div>
   )
