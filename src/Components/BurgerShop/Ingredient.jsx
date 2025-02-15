@@ -2,8 +2,8 @@
 const Ingredient = (props) => {
 	return (
 		<li>
-			Name of ingredient here
-			<button>+</button>
+			<p>{props.ingredient.name}</p>
+			<button onClick={() => props.addToBurger(props.ingredient)}>+</button>
 			<button>X</button>
 		</li>
 	)

@@ -1,9 +1,10 @@
+import Ingredient from "./Ingredient"
 
 const IngredientList = (props) => {
 	return (
 		<ul>
-			{props.ingredients.map(item => 
-				<li>{item.name}</li>
+			{props.ingredients.map(item =>
+				<Ingredient key={item._id} ingredient={item} addToBurger={props.addToBurger}/>
 			)}
 		</ul>
 	)

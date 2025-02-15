@@ -7,9 +7,12 @@ import IngredientList from './IngredientList'
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = () => {
-  const [stack, setStack] = useState(['lettuce', 'tomato'])
+  const [stack, setStack] = useState([])
 
-  console.log(ingredients)
+  const addToBurger = (ingredient) => {
+    setStack([...stack, ingredient])
+    console.log(stack)
+  }
   
   return (
     <div className="burger-shop">
@@ -18,7 +21,7 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        <IngredientList ingredients={ingredients}/>
+        <IngredientList ingredients={ingredients} addToBurger={addToBurger} />
         <BurgerStack stack={stack} />
       </section>
     </div>
