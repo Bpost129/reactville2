@@ -15,7 +15,6 @@ const BurgerShop = () => {
   }
 
   const removeFromBurger = (idx) => {
-    
     setStack(stack.filter((item, i) => i !== idx))
     console.log(stack)
   }
