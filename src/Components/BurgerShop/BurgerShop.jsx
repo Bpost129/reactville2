@@ -31,7 +31,7 @@ const BurgerShop = () => {
         <button onClick={() => clearOrder()}>Clear Order</button>
       </nav>
       <section>
-        <IngredientList ingredients={ingredients} addToBurger={addToBurger} />
+        <IngredientList stack={stack} ingredients={ingredients} addToBurger={addToBurger} />
         <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
       </section>
     </div>
