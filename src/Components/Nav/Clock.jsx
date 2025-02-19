@@ -6,8 +6,6 @@ const Clock = ({ setDaytime }) => {
   const [date, setDate] = useState(new Date())
   const time = date.toLocaleTimeString([], { hour: 'numeric', minute: 'numeric'} )
   const currentTime = getMinutes(time)
-  console.log(currentTime)
-
 
   useEffect(() => {
     setInterval(() => setDate(new Date()), 60000)
