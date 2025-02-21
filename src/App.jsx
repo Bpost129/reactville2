@@ -11,10 +11,15 @@ import SuperMarket from './Components/SuperMarket/SuperMarket'
 
 const App = () => {
   const [daytime, setDaytime] = useState(true)
+  const [cash, setCash] = useState(100)
+
+  const handleExchange = (amt) => {
+
+  }
 
   return (
     <>
-      <Nav setDaytime={setDaytime} />
+      <Nav setDaytime={setDaytime} cash={cash} />
       <main>
         <Routes>
           <Route
