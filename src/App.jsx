@@ -9,12 +9,13 @@ import Landing from './Components/Landing/Landing'
 import BurgerShop from './Components/BurgerShop/BurgerShop'
 import SuperMarket from './Components/SuperMarket/SuperMarket'
 
+
 const App = () => {
   const [daytime, setDaytime] = useState(true)
   const [cash, setCash] = useState(100)
 
   const handleExchange = (amt) => {
-
+    // stuff
   }
 
   return (
@@ -32,7 +33,7 @@ const App = () => {
           />
           <Route 
             path='/market'
-            element={<SuperMarket />}
+            element={<SuperMarket handleExchange={handleExchange}  />}
           />
         </Routes>
       </main>

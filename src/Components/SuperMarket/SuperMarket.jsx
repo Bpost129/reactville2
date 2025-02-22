@@ -1,6 +1,11 @@
 import '../../styles/super-market.css'
 
 // Components & Data
+import MarketNav from './MarketNav'
+import DisplayProducts from './DisplayProducts'
+import Cart from './Cart'
+
+
 import { products } from '../../data/market-data'
 
 const SuperMarket = () => {
