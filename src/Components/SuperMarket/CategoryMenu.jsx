@@ -7,8 +7,8 @@ const CategoryMenu = ({ products }) => {
 
   return (
     <select>
-      {categories.map(cat => 
-        <option>
+      {categories.map((cat, idx) => 
+        <option key={idx}>
           {cat}
         </option>
       )}

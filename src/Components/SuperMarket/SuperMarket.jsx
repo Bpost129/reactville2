@@ -17,8 +17,8 @@ const SuperMarket = () => {
   return (
     <div className="super-market">
       <section>
-        <MarketNav products={products} />
-        <DisplayProducts />
+        <MarketNav products={products}  />
+        <DisplayProducts products={products}  />
       </section>
 
       <Cart />
