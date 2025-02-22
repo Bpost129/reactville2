@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../../styles/super-market.css'
 
 // Components & Data
@@ -9,15 +10,18 @@ import Cart from './Cart'
 import { products } from '../../data/market-data'
 
 const SuperMarket = () => {
+  const [cart, setCart] = useState([])
+  const [productCategory, setProductCategory] = useState('Produce')
+
   console.log('Imported product data:::', products)
   return (
     <div className="super-market">
       <section>
-        MarketNav component here
-        DisplayProducts component here
+        <MarketNav />
+        <DisplayProducts />
       </section>
 
-      Cart component here
+      <Cart />
 
     </div>
   )
