@@ -17,7 +17,7 @@ const SuperMarket = () => {
   return (
     <div className="super-market">
       <section>
-        <MarketNav />
+        <MarketNav products={products} />
         <DisplayProducts />
       </section>
 
