@@ -11,9 +11,9 @@ const CategoryMenu = ({ products, setProductCategory }) => {
   // }
 
   return (
-    <select onChange={(e) => console.log(e.target.value)}>
+    <select onChange={(e) => setProductCategory(e.target.value)}>
       {categories.map((category, idx) => 
-        <option key={idx}>
+        <option key={idx} value={category}>
           {category}
         </option>
       )}
