@@ -1,15 +1,20 @@
 
-const CategoryMenu = ({ products }) => {
+const CategoryMenu = ({ products, setProductCategory }) => {
   const categories = products.reduce((prev, product) => {
     if (!prev.includes(product.category)) prev.push(product.category)
     return prev
   }, [])
 
+  // const changeCategory = (e) => {
+  //   setProductCategory(e.target.value)
+  //   console.log(e.target.value)
+  // }
+
   return (
-    <select>
-      {categories.map((cat, idx) => 
+    <select onChange={(e) => console.log(e.target.value)}>
+      {categories.map((category, idx) => 
         <option key={idx}>
-          {cat}
+          {category}
         </option>
       )}
     </select>
