@@ -1,5 +1,5 @@
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   return (
     <div className="product-card">
       <img src={product.image} alt="product icon" />
@@ -8,7 +8,7 @@ const Product = ({ product }) => {
           <p id="product-name">{product.name}</p>
           <p id="product-price">${product.price}</p>
         </span>
-        <button>ADD TO CART</button>
+        <button onClick={() => addToCart(product)}>ADD TO CART</button>
       </section>
     </div>
   )

@@ -13,16 +13,20 @@ const SuperMarket = () => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
 
+  const addToCart = (item) => {
+    console.log('added to cart!!')
+  }
+
   // console.log('Imported product data:::', products)
-  // console.log('Current product category:::', productCategory)
+  
   return (
     <div className="super-market">
       <section>
         <MarketNav products={products} setProductCategory={setProductCategory} />
-        <DisplayProducts products={products} productCategory={productCategory} />
+        <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart />
+      <Cart cart={cart} />
 
     </div>
   )

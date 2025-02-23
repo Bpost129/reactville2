@@ -12,8 +12,8 @@ const IngredientList = (props) => {
 
 	return (
 		<ul>
-			{props.ingredients.map(item =>
-				<Ingredient key={item._id} ingredient={item} addToBurger={props.addToBurger} disabled={hasBuns && item.type === 'bun'} />
+			{props.ingredients.map((item, idx) =>
+				<Ingredient key={idx} ingredient={item} addToBurger={props.addToBurger} disabled={hasBuns && item.type === 'bun'} />
 			)}
 		</ul>
 	)
