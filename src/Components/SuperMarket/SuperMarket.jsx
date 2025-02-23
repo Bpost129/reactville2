@@ -13,7 +13,8 @@ const SuperMarket = () => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
 
-  console.log('Imported product data:::', products)
+  // console.log('Imported product data:::', products)
+  // console.log('Current product category:::', productCategory)
   return (
     <div className="super-market">
       <section>

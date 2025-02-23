@@ -5,13 +5,12 @@ const CategoryMenu = ({ products, setProductCategory }) => {
     return prev
   }, [])
 
-  // const changeCategory = (e) => {
-  //   setProductCategory(e.target.value)
-  //   console.log(e.target.value)
-  // }
+  const changeCategory = (e) => {
+    setProductCategory(e.target.value)
+  }
 
   return (
-    <select onChange={(e) => setProductCategory(e.target.value)}>
+    <select onChange={(e) => changeCategory(e)}>
       {categories.map((category, idx) => 
         <option key={idx} value={category}>
           {category}
