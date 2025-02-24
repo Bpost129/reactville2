@@ -15,10 +15,8 @@ const SuperMarket = () => {
 
   const addToCart = (item) => {
     console.log('added to cart!!')
-    const cartItem = {...item}
-    cartItem.quantity ? cartItem.quantity += 1 : cartItem.quantity = 1
-    // setCart([...cart, cartItem])
-    console.log(cartItem)
+    setCart([{...item, quantity: 1}, ...cart])
+    console.log(cart)
   }
 
   // console.log('Imported product data:::', products)
