@@ -41,6 +41,10 @@ const SuperMarket = () => {
     }
     console.log(cart)
   }
+
+  const clearCart = () => {
+    setCart([])
+  }
   
   return (
     <div className="super-market">
@@ -49,7 +53,7 @@ const SuperMarket = () => {
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart cart={cart} removeFromCart={removeFromCart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />
 
     </div>
   )
