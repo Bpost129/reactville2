@@ -11,6 +11,12 @@ const Cart = (props) => {
       : sum + item.price
   }, 0))
 
+  const handleCheckout = () => {
+    props.handleExchange(total)
+    props.clearCart()
+    console.log('Chaching!')
+  }
+
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -24,7 +30,7 @@ const Cart = (props) => {
         <p>$ {total}</p>
       </div>
 
-      <button>CHECKOUT</button>
+      <button onClick={() => handleCheckout()}>CHECKOUT</button>
       <button onClick={() => props.clearCart()}>CLEAR CART</button>
     </div>
   )

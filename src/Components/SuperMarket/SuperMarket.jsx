@@ -9,7 +9,7 @@ import Cart from './Cart'
 
 import { products } from '../../data/market-data'
 
-const SuperMarket = () => {
+const SuperMarket = ({ handleExchange }) => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
 
@@ -53,7 +53,7 @@ const SuperMarket = () => {
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} handleExchange={handleExchange} />
 
     </div>
   )
