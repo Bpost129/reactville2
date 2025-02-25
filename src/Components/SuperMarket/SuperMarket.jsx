@@ -16,10 +16,13 @@ const SuperMarket = () => {
   const addToCart = (item) => {
     console.log('added to cart!!')
     const oldItem = cart.find(cartItem => {
-      return cartItem.name === item.name
+      return cartItem.id === item.id
     })
     if (oldItem) {
-      setCart([{...oldItem, quantity: parseInt(`${oldItem.quantity += 1}`)}, ...cart])
+      setCart(cart.map(stash => stash.id === item.id
+        ? { ...stash, quantity: stash.quantity + 1 }
+        : stash
+      ))
     } else {
       setCart([{...item, quantity: 1}, ...cart])
     }
