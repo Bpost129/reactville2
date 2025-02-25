@@ -29,7 +29,21 @@ const SuperMarket = () => {
     console.log(cart)
   }
 
-  // console.log('Imported product data:::', products)
+  const removeFromCart = (item) => {
+    console.log('Item Removed!!!')
+    const oldItem = cart.find(cartItem => {
+      return cartItem.id === item.id
+    })
+    if (oldItem.quantity === 1) {
+      setCart(cart.filter(stash => stash.id !== item.id))
+    } else {
+      setCart(cart.map(stash => stash.id === item.id
+        ? { ...stash, quantity: stash.quantity - 1 }
+        : stash
+      ))
+    }
+    console.log(cart)
+  }
   
   return (
     <div className="super-market">
@@ -38,7 +52,7 @@ const SuperMarket = () => {
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart cart={cart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} />
 
     </div>
   )
