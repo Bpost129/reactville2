@@ -31,10 +31,7 @@ const SuperMarket = () => {
 
   const removeFromCart = (item) => {
     console.log('Item Removed!!!')
-    const oldItem = cart.find(cartItem => {
-      return cartItem.id === item.id
-    })
-    if (oldItem.quantity === 1) {
+    if (item.quantity === 1) {
       setCart(cart.filter(stash => stash.id !== item.id))
     } else {
       setCart(cart.map(stash => stash.id === item.id
