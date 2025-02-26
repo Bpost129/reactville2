@@ -1,8 +1,10 @@
-// import { useEffect } from 'react'
+import { useState } from 'react'
 
 import CartItem from './CartItem'
 
 const Cart = (props) => {
+  const [message, setMessage] = useState('')
+
   const format = (num) => (num.toFixed(2)) /* Alternate --->  (Math.round(num * 100) / 100).toFixed(2) */
 
   const total = format(props.cart.reduce((sum, item) => {
@@ -20,6 +22,7 @@ const Cart = (props) => {
   return (
     <div className="cart">
       <h3>Cart</h3>
+      <p>{message}</p>
       {props.cart.map((item, idx) => 
         <CartItem key={idx} item={item} removeFromCart={props.removeFromCart} />
       )}

@@ -16,6 +16,7 @@ const App = () => {
 
   const handleExchange = (amt) => {
     if (cash - amt > 0) setCash((cash - amt).toFixed(2))
+    /* else { display error message } */
   }
 
   return (
