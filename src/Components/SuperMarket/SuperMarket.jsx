@@ -12,6 +12,7 @@ import { products } from '../../data/market-data'
 const SuperMarket = ({ handleExchange }) => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
+  const [toggleCart, setToggleCart] = useState(true)
 
   const addToCart = (item) => {
     console.log('added to cart!!')
@@ -49,12 +50,12 @@ const SuperMarket = ({ handleExchange }) => {
   return (
     <div className="super-market">
       <section>
-        <MarketNav products={products} setProductCategory={setProductCategory} />
+        <MarketNav products={products} setProductCategory={setProductCategory} toggleCart={toggleCart} setToggleCart={setToggleCart} />
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
-
-      <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} handleExchange={handleExchange} />
-
+      {toggleCart && 
+        <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} handleExchange={handleExchange} />
+      }
     </div>
   )
 }
