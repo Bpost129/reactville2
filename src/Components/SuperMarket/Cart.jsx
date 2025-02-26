@@ -15,7 +15,12 @@ const Cart = (props) => {
 
   const handleCheckout = () => {
     props.handleExchange(total)
-    props.clearCart()
+    if (props.handleExchange(total) === false){
+      setMessage('Payment Declined')
+    } else {
+      props.clearCart()
+      setMessage('')
+    }
     console.log('Chaching!')
   }
 
