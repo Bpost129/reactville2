@@ -8,7 +8,7 @@ import Nav from './Components/Nav/Nav'
 import Landing from './Components/Landing/Landing'
 import BurgerShop from './Components/BurgerShop/BurgerShop'
 import SuperMarket from './Components/SuperMarket/SuperMarket'
-
+import PostOffice from './Components/PostOffice/PostOffice'
 
 const App = () => {
   const [daytime, setDaytime] = useState(true)
@@ -35,6 +35,10 @@ const App = () => {
           <Route 
             path='/market'
             element={<SuperMarket handleExchange={handleExchange} />}
+          />
+          <Route 
+            path='/postoffice/*'
+            element={<PostOffice />}
           />
         </Routes>
       </main>
