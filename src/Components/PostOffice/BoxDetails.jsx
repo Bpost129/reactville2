@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom"
 
-const BoxDetails = () => {
+const BoxDetails = (props) => {
+  const boxNo = useParams().boxNo
 
+  console.log(props.boxes[boxNo])
   return (
     <section className="box-details">
       <header>
