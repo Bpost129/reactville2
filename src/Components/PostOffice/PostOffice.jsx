@@ -15,7 +15,7 @@ import { initialPOBoxes, initialLetters } from "../../data/post-data"
 const PostOffice = (props) => {
 	const [boxes, setBoxes] = useState(initialPOBoxes)
 	const [letters, setLetters] = useState(initialLetters)
-	console.log(initialPOBoxes, initialLetters)
+	// console.log(initialPOBoxes, initialLetters)
 
 	return (
 		<div className="post-office">
@@ -32,7 +32,7 @@ const PostOffice = (props) => {
 				<Routes>
 				<Route
             path='/'
-            element={<BoxList />}
+            element={<BoxList boxes={boxes} />}
           />
           <Route 
             path='/:boxNo'
