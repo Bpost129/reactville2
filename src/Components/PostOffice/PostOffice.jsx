@@ -36,7 +36,7 @@ const PostOffice = (props) => {
           />
           <Route 
             path='/:boxNo'
-            element={<BoxDetails />}
+            element={<BoxDetails boxes={boxes} letters={letters} />}
           />
           <Route 
             path='/letters/new'
