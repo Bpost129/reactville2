@@ -1,5 +1,6 @@
+import Letter from './Letter'
 
-const LetterList = () => {
+const LetterList = ({ letters, letterIds }) => {
   return (
     <table>
       <thead>
@@ -12,6 +13,9 @@ const LetterList = () => {
         </tr>
       </thead>
       <tbody>
+        {letterIds.map((lid, idx) => 
+          <Letter key={idx} id={lid} />
+        )}
         Use the map function and Letter component here
       </tbody>
     </table>
