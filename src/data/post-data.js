@@ -13,7 +13,7 @@ export const initialLetters = {
   0: {
     content: 'Hello Mr. Abramov, please finish the new React docs. Thanks.',
     date: "11/23/2021",
-    read: false,
+    read: true,
     sender: 'Hunter Long',
     recipient: 'Dan Abramov',
     subject: 'React Docs',
