@@ -1,5 +1,7 @@
 
-const Letter = () => {
+const Letter = ({ id, letters }) => {
+  const thisLetter = letters[id]
+  console.log('this letter::: ' + thisLetter)
 
   return (
     <>
@@ -14,7 +16,7 @@ const Letter = () => {
       </tr>
       <tr>
         <td id="letter-content" colSpan="5">
-          Letter Content here
+          {thisLetter.content}
         </td>
       </tr>
     </>

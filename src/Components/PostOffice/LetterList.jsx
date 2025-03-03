@@ -14,7 +14,7 @@ const LetterList = ({ letters, letterIds }) => {
       </thead>
       <tbody>
         {letterIds.map((lid, idx) => 
-          <Letter key={idx} id={lid} />
+          <Letter key={idx} id={lid} letters={letters} />
         )}
         Use the map function and Letter component here
       </tbody>
