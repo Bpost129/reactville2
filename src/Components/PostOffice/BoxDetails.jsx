@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 
 import LetterList from './LetterList'
 
-const BoxDetails = ({ boxes, letters}) => {
+const BoxDetails = ({ boxes, letters, markAsRead }) => {
   const { boxNo } = useParams()
   const poBox = boxes[boxNo]
 
@@ -17,7 +17,7 @@ const BoxDetails = ({ boxes, letters}) => {
           )}
         </select>
       </header>
-      <LetterList letters={letters} letterIds={poBox.letters} />
+      <LetterList letters={letters} letterIds={poBox.letters} markAsRead={markAsRead} />
 
     </section>
   )

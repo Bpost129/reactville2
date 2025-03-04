@@ -17,6 +17,10 @@ const PostOffice = (props) => {
 	const [letters, setLetters] = useState(initialLetters)
 	// console.log(initialPOBoxes, initialLetters)
 
+	const markAsRead = (id, status) => {
+		
+	}
+
 	return (
 		<div className="post-office">
 
@@ -36,7 +40,7 @@ const PostOffice = (props) => {
           />
           <Route 
             path='/:boxNo'
-            element={<BoxDetails boxes={boxes} letters={letters} />}
+            element={<BoxDetails boxes={boxes} letters={letters} markAsRead={markAsRead} />}
           />
           <Route 
             path='/letters/new'

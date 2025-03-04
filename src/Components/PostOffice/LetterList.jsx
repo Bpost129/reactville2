@@ -1,6 +1,6 @@
 import Letter from './Letter'
 
-const LetterList = ({ letters, letterIds }) => {
+const LetterList = ({ letters, letterIds, markAsRead }) => {
   return (
     <table>
       <thead>
@@ -14,9 +14,8 @@ const LetterList = ({ letters, letterIds }) => {
       </thead>
       <tbody>
         {letterIds.map((lid, idx) => 
-          <Letter key={idx} id={lid} letters={letters} />
+          <Letter key={idx} id={lid} letters={letters} markAsRead={markAsRead} />
         )}
-        Use the map function and Letter component here
       </tbody>
     </table>
   )

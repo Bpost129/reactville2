@@ -1,5 +1,5 @@
 
-const Letter = ({ id, letters }) => {
+const Letter = ({ id, letters, markAsRead }) => {
   const thisLetter = letters[id]
   console.log('this letter::: ' + thisLetter)
 
@@ -11,7 +11,7 @@ const Letter = ({ id, letters }) => {
         <td id="letter-recipient">{thisLetter.recipient}</td>
         <td id="letter-subject">{thisLetter.subject}</td>
         <td id="letter-checkbox">
-          <input name="isRead" type="checkbox" checked={thisLetter.read} />
+          <input name="isRead" type="checkbox" checked={thisLetter.read} onClick={() => markAsRead(id, thisLetter.read)} />
         </td>
       </tr>
       <tr>
