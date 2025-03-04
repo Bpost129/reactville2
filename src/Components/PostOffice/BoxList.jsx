@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const BoxList = ({ boxes }) => {
   const boxList = Object.keys(boxes)
-  console.log('BoxList:::  ' + boxList)
+
   return (
     <section className="po-box-list">
       {boxList.map((boxNo, idx) => 

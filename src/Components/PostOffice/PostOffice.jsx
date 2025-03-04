@@ -15,10 +15,9 @@ import { initialPOBoxes, initialLetters } from "../../data/post-data"
 const PostOffice = (props) => {
 	const [boxes, setBoxes] = useState(initialPOBoxes)
 	const [letters, setLetters] = useState(initialLetters)
-	// console.log(initialPOBoxes, initialLetters)
 
 	const markAsRead = (id, status) => {
-		
+		setLetters({ ...letters, [id]: {...letters[id], read: status} })
 	}
 
 	return (

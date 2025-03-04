@@ -6,7 +6,6 @@ const BoxDetails = ({ boxes, letters, markAsRead }) => {
   const { boxNo } = useParams()
   const poBox = boxes[boxNo]
 
-  console.log(poBox)
   return (
     <section className="box-details">
       <header>
