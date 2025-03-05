@@ -8,9 +8,17 @@ const NewBox = () => {
   const [boxHolders, setBoxHolders] = useState([])
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const fullName = firstName + " " + lastName
+
+  const handleChange = (e) => {
+    if (e.target.name === 'firstName') setFirstName(e.target.value)
+    else setLastName(e.target.value)
+  }
 
   const addBoxHolder = () => {
-
+    setBoxHolders([...boxHolders, fullName])
+    setFirstName('')
+    setLastName('')
   }
 
   const removeBoxHolder = (name) => {
@@ -19,6 +27,10 @@ const NewBox = () => {
 
   const handleSubmit = () => {
 
+  }
+
+  const handleRedirect = () => {
+    navigate('/postoffice')
   }
 
   return (
@@ -31,9 +43,9 @@ const NewBox = () => {
       </header>
 
       <section>
-        <BoxHolders removeBoxHolder={removeBoxHolder} />
-        <input placeholder="First Name" type="text" name="firstName" value={firstName} onChange={() => setFirstName()} />
-        <input placeholder="Last Name" type="text" name="lastName" value={lastName} onChange={() => setLastName()} />
+        <BoxHolders boxHolders={boxHolders} removeBoxHolder={removeBoxHolder} />
+        <input placeholder="First Name" type="text" name="firstName" value={firstName} onChange={handleChange} />
+        <input placeholder="Last Name" type="text" name="lastName" value={lastName} onChange={handleChange} />
         <button id="add-boxholder" onClick={() => addBoxHolder()}>ADD BOXHOLDER</button>
       </section>
 
