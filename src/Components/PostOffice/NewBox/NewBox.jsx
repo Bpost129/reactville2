@@ -1,5 +1,14 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+import BoxHolders from './BoxHolders'
 
 const NewBox = () => {
+  const navigate = useNavigate()
+  const [boxHolders, setBoxHolders] = useState([])
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+
   return (
     <section className="post-office-form">
 

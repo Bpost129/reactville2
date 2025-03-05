@@ -16,8 +16,16 @@ const PostOffice = (props) => {
 	const [boxes, setBoxes] = useState(initialPOBoxes)
 	const [letters, setLetters] = useState(initialLetters)
 
+	const nextBoxNumber = Object.keys(boxes).length
+	const nextLetterId = Object.keys(letters).length
+	console.log(nextLetterId)
+
 	const markAsRead = (id, status) => {
 		setLetters({ ...letters, [id]: {...letters[id], read: status} })
+	}
+
+	const createBox = (nameArr) => {
+
 	}
 
 	return (
