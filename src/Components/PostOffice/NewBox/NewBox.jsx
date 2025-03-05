@@ -9,20 +9,32 @@ const NewBox = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
 
+  const addBoxHolder = () => {
+
+  }
+
+  const removeBoxHolder = (name) => {
+
+  }
+
+  const handleSubmit = () => {
+
+  }
+
   return (
     <section className="post-office-form">
 
       <header>
         <h3>New PO Box</h3>
         <p>Total: $</p>
-        <button id="submit-box-btn">SUBMIT</button>
+        <button id="submit-box-btn" onClick={() => handleSubmit()}>SUBMIT</button>
       </header>
 
       <section>
-        BoxHolders component
-        <input placeholder="First Name" type="text" name="firstName" value="" onChange="" />
-        <input placeholder="Last Name" type="text" name="lastName" value="" onChange="" />
-        <button id="add-boxholder">ADD BOXHOLDER</button>
+        <BoxHolders removeBoxHolder={removeBoxHolder} />
+        <input placeholder="First Name" type="text" name="firstName" value={firstName} onChange={() => setFirstName()} />
+        <input placeholder="Last Name" type="text" name="lastName" value={lastName} onChange={() => setLastName()} />
+        <button id="add-boxholder" onClick={() => addBoxHolder()}>ADD BOXHOLDER</button>
       </section>
 
     </section>
