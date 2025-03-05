@@ -22,7 +22,9 @@ const NewBox = () => {
   }
 
   const removeBoxHolder = (name) => {
-
+    setBoxHolders(boxHolders.filter(holder => {
+      return holder !== name
+    }))
   }
 
   const handleSubmit = () => {
