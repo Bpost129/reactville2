@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import BoxHolders from './BoxHolders'
 
-const NewBox = () => {
+const NewBox = ({ createBox }) => {
   const navigate = useNavigate()
   const [boxHolders, setBoxHolders] = useState([])
   const [firstName, setFirstName] = useState('')
@@ -26,14 +26,16 @@ const NewBox = () => {
       return holder !== name
     }))
   }
-
-  const handleSubmit = () => {
-
-  }
-
+  
   const handleRedirect = () => {
     navigate('/postoffice')
   }
+
+  const handleSubmit = () => {
+    createBox(boxHolders)
+    handleRedirect()
+  }
+
 
   return (
     <section className="post-office-form">

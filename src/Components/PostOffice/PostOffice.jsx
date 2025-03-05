@@ -25,7 +25,7 @@ const PostOffice = (props) => {
 	}
 
 	const createBox = (nameArr) => {
-
+		setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
 	}
 
 	return (
@@ -55,7 +55,7 @@ const PostOffice = (props) => {
           />
           <Route 
             path='/boxes/new'
-            element={<NewBox />}
+            element={<NewBox createBox={createBox} />}
           />
 				</Routes>
 			</div>
