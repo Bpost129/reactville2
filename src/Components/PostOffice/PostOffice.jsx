@@ -18,7 +18,6 @@ const PostOffice = (props) => {
 
 	const nextBoxNumber = Object.keys(boxes).length
 	const nextLetterId = Object.keys(letters).length
-	console.log(nextLetterId)
 
 	const markAsRead = (id, status) => {
 		setLetters({ ...letters, [id]: {...letters[id], read: status} })

@@ -1,9 +1,13 @@
 
-const SelectRecipient = () => {
+const SelectRecipient = ({ selectedBox, handleChange}) => {
+  
+
   return (
-    <select required name="recipient">
+    <select required name="recipient" onChange={handleChange}>
       <option value="">Select Recipient</option>
-      Mapping function might be required after the first option tag above
+      {selectedBox?.boxHolders.map((holder, idx) =>
+        <option key={idx} value={holder}>{holder}</option>
+      )}
     </select>
   )
 }

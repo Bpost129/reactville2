@@ -2,7 +2,7 @@
 const SelectBox = (props) => {
 
   const handleChange = (e) => {
-    props.setBoxNum(e.target.value)
+    props.setBoxNum(parseInt(e.target.value))
   }
 
   return (

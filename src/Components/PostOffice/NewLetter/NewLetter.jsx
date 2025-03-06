@@ -10,8 +10,9 @@ const NewLetter = ({ boxes }) => {
   const [boxNum, setBoxNum] = useState(null)
   const [letter, setLetter] = useState(initialState)
   const boxNumbers = Object.keys(boxes)
+  const selectedBox = boxes[boxNum]
 
-  console.log(initialState)
+  // console.log(initialState)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -29,7 +30,7 @@ const NewLetter = ({ boxes }) => {
       <header>
         <h3>New Letter</h3>
         <SelectBox setBoxNum={setBoxNum} boxNumbers={boxNumbers} />
-        <SelectRecipient  />
+        <SelectRecipient selectedBox={selectedBox} handleChange={handleChange} />
       </header>
 
       <section>
