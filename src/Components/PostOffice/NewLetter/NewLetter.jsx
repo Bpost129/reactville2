@@ -6,14 +6,17 @@ import SelectRecipient from './SelectRecipient'
 
 import { initialState } from "./initialState"
 
-const NewLetter = () => {
+const NewLetter = ({ boxes }) => {
   const [boxNum, setBoxNum] = useState(null)
   const [letter, setLetter] = useState(initialState)
+  const boxNumbers = Object.keys(boxes)
 
   console.log(initialState)
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // send letter
+    setLetter(initialState)
   }
 
   const handleChange = (e) => {
@@ -25,8 +28,8 @@ const NewLetter = () => {
 
       <header>
         <h3>New Letter</h3>
-        <SelectBox />
-        <SelectRecipient />
+        <SelectBox setBoxNum={setBoxNum} boxNumbers={boxNumbers} />
+        <SelectRecipient  />
       </header>
 
       <section>
@@ -54,7 +57,7 @@ const NewLetter = () => {
           value={letter.content}
           onChange={handleChange}
         />
-        <button type="submit">SEND LETTER</button>
+        <button type="submit" onClick={() => handleSubmit()}>SEND LETTER</button>
       </section>
 
     </form>
