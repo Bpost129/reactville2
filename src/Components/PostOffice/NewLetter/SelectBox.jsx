@@ -1,10 +1,15 @@
 
 const SelectBox = (props) => {
+
+  const handleChange = (e) => {
+    props.setBoxNum(e.target.value)
+  }
+
   return (
-    <select required name="boxNo">
+    <select required name="boxNo" onChange={handleChange}>
       <option value="">Select PO Box</option>
-      {props.boxNumbers.map((num, idx) =>
-        <option key={idx} value={num}>PO Box {num}</option>
+      {props.boxNumbers.map(num =>
+        <option key={num} value={num}>PO Box {num}</option>
       )}
     </select>
   )
