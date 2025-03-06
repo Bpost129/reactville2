@@ -28,6 +28,8 @@ const PostOffice = (props) => {
 		setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
 	}
 
+	
+
 	return (
 		<div className="post-office">
 
