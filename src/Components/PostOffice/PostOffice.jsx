@@ -27,7 +27,11 @@ const PostOffice = (props) => {
 		setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
 	}
 
-
+	const sendLetter = (boxNum, formData) => {
+		setLetters({ ...letters, [nextLetterId]: { formData }})
+		const updatedLetterIds = [...boxes[boxNum].letters, nextLetterId]
+		setBoxes({ ...boxes, [boxNum]: { ...boxes[boxNum], letters: updatedLetterIds }})
+	}
 
 	return (
 		<div className="post-office">
@@ -52,7 +56,7 @@ const PostOffice = (props) => {
           />
           <Route 
             path='/letters/new'
-            element={<NewLetter boxes={boxes} />}
+            element={<NewLetter boxes={boxes} sendLetter={sendLetter} />}
           />
           <Route 
             path='/boxes/new'
