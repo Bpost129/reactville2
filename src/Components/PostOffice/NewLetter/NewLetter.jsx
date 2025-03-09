@@ -15,7 +15,7 @@ const NewLetter = ({ boxes, sendLetter }) => {
   // console.log(initialState)
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+
     sendLetter(boxNum, letter)
     // setLetter(initialState)
   }
