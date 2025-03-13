@@ -15,9 +15,9 @@ const NewLetter = ({ boxes, sendLetter }) => {
   // console.log(initialState)
 
   const handleSubmit = (e) => {
-
+    e.preventDefault()
     sendLetter(boxNum, letter)
-    // setLetter(initialState)
+    setLetter(initialState)
   }
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ const NewLetter = ({ boxes, sendLetter }) => {
   }
   
   return (
-    <form className="post-office-form">
+    <form className="post-office-form" onSubmit={handleSubmit}>
 
       <header>
         <h3>New Letter</h3>
@@ -58,7 +58,7 @@ const NewLetter = ({ boxes, sendLetter }) => {
           value={letter.content}
           onChange={handleChange}
         />
-        <button type="submit" onClick={() => handleSubmit()}>SEND LETTER</button>
+        <button type="submit">SEND LETTER</button>
       </section>
 
     </form>
