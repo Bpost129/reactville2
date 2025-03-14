@@ -9,6 +9,7 @@ const NewBox = ({ createBox }) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const fullName = firstName + " " + lastName
+  const costOfBox = (10 * boxHolders.length)
 
   const handleChange = (e) => {
     if (e.target.name === 'firstName') setFirstName(e.target.value)
@@ -32,7 +33,7 @@ const NewBox = ({ createBox }) => {
   }
 
   const handleSubmit = () => {
-    createBox(boxHolders)
+    createBox(boxHolders, costOfBox)
     handleRedirect()
   }
 
@@ -42,7 +43,7 @@ const NewBox = ({ createBox }) => {
 
       <header>
         <h3>New PO Box</h3>
-        <p>Total: $</p>
+        <p>Total: ${costOfBox}</p>
         <button id="submit-box-btn" onClick={() => handleSubmit()}>SUBMIT</button>
       </header>
 

@@ -38,7 +38,7 @@ const App = () => {
           />
           <Route 
             path='/postoffice/*'
-            element={<PostOffice />}
+            element={<PostOffice handleExchange={handleExchange} />}
           />
         </Routes>
       </main>

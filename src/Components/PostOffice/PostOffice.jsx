@@ -23,14 +23,24 @@ const PostOffice = (props) => {
 		setLetters({ ...letters, [id]: {...letters[id], read: status} })
 	}
 
-	const createBox = (nameArr) => {
-		setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
+	const createBox = (nameArr, cost) => {
+		if (props.handleExchange(cost) !== false) {
+			setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
+			props.handleExchange(cost)
+		} else {
+			console.log('Insufficient funds')
+		}
 	}
 
 	const sendLetter = (boxNum, formData) => {
-		setLetters({ ...letters, [nextLetterId]: formData})
-		const updatedLetterIds = [...boxes[boxNum].letters, nextLetterId]
-		setBoxes({ ...boxes, [boxNum]: { ...boxes[boxNum], letters: updatedLetterIds }})
+		if (props.handleExchange(0.99) !== false) {
+			setLetters({ ...letters, [nextLetterId]: formData})
+			const updatedLetterIds = [...boxes[boxNum].letters, nextLetterId]
+			setBoxes({ ...boxes, [boxNum]: { ...boxes[boxNum], letters: updatedLetterIds }})
+			props.handleExchange(0.99)
+		} else {
+			console.log('Insufficient funds')
+		}
 	}
 
 	return (
