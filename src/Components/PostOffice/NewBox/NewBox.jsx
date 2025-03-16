@@ -44,14 +44,14 @@ const NewBox = ({ createBox }) => {
       <header>
         <h3>New PO Box</h3>
         <p>Total: ${costOfBox}</p>
-        <button id="submit-box-btn" onClick={() => handleSubmit()}>SUBMIT</button>
+        <button id="submit-box-btn" disabled={!boxHolders.length} onClick={() => handleSubmit()}>SUBMIT</button>
       </header>
 
       <section>
         <BoxHolders boxHolders={boxHolders} removeBoxHolder={removeBoxHolder} />
         <input placeholder="First Name" type="text" name="firstName" value={firstName} onChange={handleChange} />
         <input placeholder="Last Name" type="text" name="lastName" value={lastName} onChange={handleChange} />
-        <button id="add-boxholder" onClick={() => addBoxHolder()}>ADD BOXHOLDER</button>
+        <button id="add-boxholder" disabled={!firstName || !lastName} onClick={() => addBoxHolder()}>ADD BOXHOLDER</button>
       </section>
 
     </section>
