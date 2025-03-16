@@ -17,9 +17,13 @@ const NewBox = ({ createBox }) => {
   }
 
   const addBoxHolder = () => {
-    setBoxHolders([...boxHolders, fullName])
-    setFirstName('')
-    setLastName('')
+    if (!boxHolders.includes(fullName)) {
+      setBoxHolders([...boxHolders, fullName])
+      setFirstName('')
+      setLastName('')
+    } else {
+      console.log('Cannot add duplicate boxholders')
+    }
   }
 
   const removeBoxHolder = (name) => {
