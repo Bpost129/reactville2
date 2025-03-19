@@ -12,10 +12,11 @@ const Nav = (props) => {
   return (
     <nav className="navigation-bar">
       <NavLink to='/' id='logo'><img src={Logo} alt="logo" /></NavLink>
-      <Wallet cash={props.cash} />
+      <NavLink to='/bank'>BANK</NavLink>
       <NavLink to='/market'>SUPER MARKET</NavLink>
       <NavLink to='/burgers'>BURGER SHOP</NavLink>
       <NavLink to='/postoffice'>POST OFFICE</NavLink>
+      <Wallet cash={props.cash} />
       <Clock setDaytime={props.setDaytime} />
     </nav>
   )

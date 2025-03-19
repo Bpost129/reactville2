@@ -1,13 +1,15 @@
 
+import ControlPanel from './ControlPanel'
+
 const Account = (props) => {
 	return (
 		<div className="account">
-			<h3>Account name here</h3>
+			<h3>{props.name}</h3>
 			<section>
-				<p>Balance:</p>
+				<p>Balance: {props.balance}</p>
 				<p>Message:</p>
 			</section>
-			Control Panel component here
+			<ControlPanel />
 		</div>
 	)
 }
