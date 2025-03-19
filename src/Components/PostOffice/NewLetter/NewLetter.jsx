@@ -19,9 +19,14 @@ const NewLetter = ({ boxes, sendLetter }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    sendLetter(boxNum, letter)
-    setLetter(initialState)
-    setStatus('Your letter has been sent')
+    if (sendLetter(boxNum, letter) === false) {
+      setStatus('Payment has failed')
+      setTimeout(() => setStatus(''), 2000)
+    } else {
+      sendLetter(boxNum, letter)
+      setLetter(initialState)
+      setStatus('Your letter has been sent')
+    }
   }
 
   const handleChange = (e) => {
@@ -32,8 +37,12 @@ const NewLetter = ({ boxes, sendLetter }) => {
     return (
       <div className="status-msg">
         <h4>{status}</h4>
-        <button onClick={() => setStatus('')}>New Letter</button>
-        <button onClick={() => navigate('/postoffice')}>Return To Lobby</button>
+        {status !== 'Payment has failed' &&
+          <>
+            <button onClick={() => setStatus('')}>New Letter</button>
+            <button onClick={() => navigate('/postoffice')}>Return To Lobby</button>
+          </>
+        }
       </div>
     )
   } else {
