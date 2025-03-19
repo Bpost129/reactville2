@@ -28,7 +28,7 @@ const PostOffice = (props) => {
 			setBoxes({...boxes, [nextBoxNumber]: { boxHolders: nameArr, letters: [] }})
 			props.handleExchange(cost)
 		} else {
-			console.log('Insufficient funds')
+			return false
 		}
 	}
 
@@ -39,7 +39,7 @@ const PostOffice = (props) => {
 			setBoxes({ ...boxes, [boxNum]: { ...boxes[boxNum], letters: updatedLetterIds }})
 			props.handleExchange(0.99)
 		} else {
-			console.log('Insufficient funds')
+			return false
 		}
 	}
 

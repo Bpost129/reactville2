@@ -39,9 +39,14 @@ const NewBox = ({ createBox }) => {
   }
 
   const handleSubmit = () => {
-    createBox(boxHolders, costOfBox)
-    setStatus('Your PO Box has been created')
-    handleRedirect()
+    if (createBox(boxHolders, costOfBox) === false) {
+      setStatus('Payment has failed')
+      setTimeout(() => setStatus(''), 2000)
+    } else {
+      createBox(boxHolders, costOfBox)
+      setStatus('Your PO Box has been created')
+      handleRedirect()
+    }
   }
 
   if (status) {
