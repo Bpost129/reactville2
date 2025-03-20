@@ -4,7 +4,7 @@ import Account from './Account'
 
 import '../../styles/bank.css'
 
-const Bank = () => {
+const Bank = ({ handleExchange }) => {
 	const [checking, setChecking] = useState(0)
 	const [savings, setSavings] = useState(0)
 

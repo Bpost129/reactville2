@@ -43,7 +43,7 @@ const App = () => {
           />
           <Route 
             path='/bank'
-            element={<Bank />}
+            element={<Bank handleExchange={handleExchange} />}
           />
         </Routes>
       </main>
