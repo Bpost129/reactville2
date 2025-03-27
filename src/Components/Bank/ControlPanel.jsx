@@ -11,9 +11,9 @@ const ControlPanel = (props) => {
 			<div id="input-display">{amount}</div>
 			<InputPad setAmount={setAmount} amount={amount} />
 			<section>
-				<Button name="DEPOSIT" amount={amount} />
+				<Button name="DEPOSIT" amount={amount} setAmount={setAmount} />
 				<button onClick={() => setAmount('')}>CLEAR</button>
-				<Button name="WITHDRAW" amount={amount} />
+				<Button name="WITHDRAW" amount={amount} setAmount={setAmount} />
 			</section>
 		</div>
 	)
