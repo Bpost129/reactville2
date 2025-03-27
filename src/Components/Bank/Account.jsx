@@ -7,7 +7,7 @@ const Account = (props) => {
 	const [message, setMessage] = useState('')
 
 	const handleBalance = () => {
-		
+
 	}
 
 	return (
@@ -17,7 +17,7 @@ const Account = (props) => {
 				<p>Balance: {balance}</p>
 				<p>Message: {message}</p>
 			</section>
-			<ControlPanel />
+			<ControlPanel handleBalance={handleBalance} />
 		</div>
 	)
 }

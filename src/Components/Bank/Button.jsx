@@ -5,7 +5,10 @@ const Button = (props) => {
       type="submit" 
       onClick={(e) => {
         e.preventDefault()
-        
+        if (props.amount) {
+          props.handleBalance(props.name, parseFloat(props.amount))
+        }
+        props.setAmount('')
       }}
     >
       {props.name}
