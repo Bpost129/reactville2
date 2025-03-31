@@ -24,8 +24,10 @@ const Account = (props) => {
 		<div className="account">
 			<h3>{props.name}</h3>
 			<section>
-				<p>Balance: {balance}</p>
-				<p>Message: {message}</p>
+				<p>Balance: ${balance}</p>
+				{message && 
+					<p>Message: {message}</p>
+				}
 			</section>
 			<ControlPanel handleBalance={handleBalance} />
 		</div>
